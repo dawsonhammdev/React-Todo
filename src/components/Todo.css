@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2d2d37;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 0 36px;
+  max-width: 865px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+h1 {
+  text-align: left;
+}
+
+.todo-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+.item {
+  background-color: #1546FB;
+  width: 45%;
+  text-align: center;
+  margin: 4px 0;
+  padding-left: 8px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.item.completed {
+  background-color: #1546FB;
+  text-decoration: line-through;
+}
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+form > input {
+  background-color: #2d2d37;
+  border: 0;
+  padding: 6px 0;
+  font-size: 1rem;
+  width: 240px;
+  outline: 0;
+  color: white;
+  border-bottom: 1px solid #5CE1E6;
+  margin-right: 8px;
+}
+
+button {
+background: linear-gradient(to bottom, #4eb5e5 0%,#5CE1E6 100%);
+border: none;
+
+  border-radius: 5px;
+  position: relative;
+  border-bottom: 4px solid #1546FB;
+  color: white;
+  font-size: 16px;
+  padding: 6px 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input::placeholder {
+  color: white;
+  opacity: .5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.clear-btn {
+  margin-top: 16px;
+}
+
+.logo {
+    width: 21%;
+    text-align: center;
+    margin-top: 10%;
+    
+}

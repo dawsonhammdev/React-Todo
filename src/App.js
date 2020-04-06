@@ -1,6 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
+import Logo from './logo.png'
+import './components/Todo.css'
 
 const todo = [
   {
@@ -72,8 +74,8 @@ class App extends React.Component {
   render() {
     return (
         <div className="App">
+          <img class ="logo" src={Logo} alt="website logo"/>
           <div className="header">
-            <h2>Todo Or Not Todo</h2>
             <TodoForm addItem={this.addItem} />
           </div>
           <TodoList
