@@ -42,6 +42,24 @@ class App extends React.Component {
     });
   };
 
+  toggleItem = itemId => {
+    console.log(itemId);
+    // map over array
+    // when we find the item we clicked, toggle the completed field
+    // otherwise return the item untouched
+    this.setState({
+      todo: this.state.todo.map(item => {
+        if (itemId === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        }
+        return item;
+      })
+    });
+  };
+
   render() {
     return (
       <div>
