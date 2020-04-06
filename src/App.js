@@ -1,20 +1,22 @@
 import React from 'react';
+import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
 
 const todo = [
   {
     task: 'Walk The Dog',
-    id: "3:00",
-    completed: false
+    id: 12,
+    completed: false,
   },
   {
     task: 'Workout',
-    id: "3:15",
-    completed: false
+    id: 123,
+    completed: false,
   },
   {
     task: 'Make Lunch',
-    id: "3:30",
-    completed: false
+    id: 1234,
+    completed: false,
   }
 ]
 
@@ -33,7 +35,7 @@ class App extends React.Component {
   addItem = (e, item) => {
     e.preventDefault();
     const newItem = {
-      name: item,
+      task: item,
       id: Date.now(),
       completed: false
     };
@@ -60,11 +62,26 @@ class App extends React.Component {
     });
   };
 
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      todo: this.state.todo.filter(item => !item.completed)
+    });
+  };
+
   render() {
     return (
-      <div>
-        <h2>To Do Or Not To Do</h2>
-      </div>
+        <div className="App">
+          <div className="header">
+            <h2>Todo Or Not Todo</h2>
+            <TodoForm addItem={this.addItem} />
+          </div>
+          <TodoList
+            todo={this.state.todo}
+            toggleItem={this.toggleItem}
+            clearCompleted={this.clearCompleted}
+          />
+        </div>
     );
   }
 }
