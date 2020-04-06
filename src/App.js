@@ -3,17 +3,17 @@ import React from 'react';
 const todo = [
   {
     task: 'Walk The Dog',
-    id: 123,
+    id: "3:00",
     completed: false
   },
   {
     task: 'Workout',
-    id: 123,
+    id: "3:15",
     completed: false
   },
   {
     task: 'Make Lunch',
-    id: 123,
+    id: "3:30",
     completed: false
   }
 ]
@@ -23,6 +23,24 @@ class App extends React.Component {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
 
+  constructor() {
+    super();
+    this.state = {
+      todo
+    }
+  }
+
+  addItem = (e, item) => {
+    e.preventDefault();
+    const newItem = {
+      name: item,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      todo: [...this.state.todo, newItem]
+    });
+  };
 
   render() {
     return (
